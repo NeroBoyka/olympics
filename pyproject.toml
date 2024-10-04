@@ -11,3 +11,6 @@ dependencies = [
   'fastapi[standard]',
   'pytest-cov',
 ]
+
+[tool.pytest.ini_options]
+addopts = "--cov=olympics --cov=tests"
