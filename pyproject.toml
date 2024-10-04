@@ -13,4 +13,4 @@ dependencies = [
 ]
 
 [tool.pytest.ini_options]
-addopts = "--cov=olympics --cov=tests"
+addopts = "--cov=olympics --cov=tests --cov-report=term-missing"
