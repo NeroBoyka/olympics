@@ -149,16 +149,19 @@ def get_medals(id=None):
     return rows
 
 
-def get_discipline_athletes(discipline_id):
+def get_discipline_athletes(discipline_id=None):
     """Get athlete ids linked to given discipline id."""
-    cursor = get_connection().cursor()
-    rows = cursor.execute('''
-        SELECT *
-        FROM discipline_athlete
-        WHERE discipline_id = ?
-    ''', (discipline_id,)).fetchall()
-    cursor.close()
-    return rows
+    if discipline_id is None:
+        return []
+    else:
+        cursor = get_connection().cursor()
+        rows = cursor.execute('''
+            SELECT *
+            FROM discipline_athlete
+            WHERE discipline_id = ?
+        ''', (discipline_id,)).fetchall()
+        cursor.close()
+        return rows
 
 
 def get_top_countries(top=10):
@@ -187,7 +190,7 @@ def get_top_countries(top=10):
         GROUP BY country.id
         ORDER BY gold DESC, silver DESC, bronze DESC
         LIMIT ?
-    ''', (10,)).fetchall()
+    ''', (top,)).fetchall()
     cursor.close()
     return rows
 
@@ -217,7 +220,11 @@ def get_collective_medals(team_id=None):
         JOIN discipline
         ON event.discipline_id = discipline.id
     '''
-    rows = cursor.execute(sql).fetchall()
+    if team_id is None:
+        rows = cursor.execute(sql).fetchall()
+    else:
+        sql += 'WHERE team.id = ?'
+        rows = cursor.execute(sql, (team_id,)).fetchall()
     cursor.close()
     return rows
 

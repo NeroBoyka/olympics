@@ -34,7 +34,6 @@ Les devoirs dont le contenu est trop proche, dont l’historique Git est douteux
 ou dont le code est si stupide qu’il ne peut pas avoir été écrit par un humain,
 seront sanctionnés d’un D ou d’un E.
 
-
 ## Comment l’installer
 
 1. Forkez le dépôt.
@@ -68,7 +67,6 @@ seront sanctionnés d’un D ou d’un E.
 8. Installez les dépendances du projet.
 
    `pip install -e .`
-
 
 ## Comment l’utiliser
 
@@ -156,7 +154,6 @@ Quelques tests basiques sont disponibles dans le dossier `tests`.
 
 Pour lancer les tests, lancez `python -m pytest`
 
-
 ## Sujet
 
 Le but de cette évaluation est de tester, corriger et améliorer cette
@@ -228,6 +225,12 @@ lève une exception, on peut considérer cela comme un bug.
 5. Un bug est caché dans le fichier, faites un test de non-régression dédié et
    commitez-le avec la correction.
 
+   ***
+
+   Pour les trucs a corriger dans db.py j'ai discipline athlete de sorte que ca prenne en compte le cas ou il n'y a pas d'arguments.
+   J'ai corrige un oublie dans get_top_countries
+   Puis dans get_collective_medals j'ai ajoute le cas ou il y a d'argument
+
 6. Recommencez les opérations 4 et 5 avec `api.py`.
 
 7. Recommencez les opérations 4 et 5 avec `cli.py`. À quoi sert le paramètre
@@ -272,7 +275,6 @@ pertinents et justifiés. N’utilisez pas d’outils tiers, en particulier `tox
 Mettez en place un outil de vérification de la qualité du code : installez,
 configurez et utilisez `ruff`. Mettez en place dans votre dépôt Git des
 méthodes pour s’assurer que le code suit toujours ces bonnes pratiques.
-
 
 ## Réponses et remarques
 

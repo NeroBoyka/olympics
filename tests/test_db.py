@@ -56,18 +56,30 @@ def test_medals_by_id():
 
 # tests de get_discipline_athletes
 def test_discipline_athletes():
+    rows = db.get_discipline_athletes()
+    assert len(rows) == 0
+
+def test_discipline_athletes_with_id():
     rows = db.get_discipline_athletes(7)
     assert len(rows) > 1
 
 # tests de get_top_countries
 def test_top_countries():
-    rows = db.get_top_countries(0)
+    rows = db.get_top_countries()
     assert len(rows) == 10
+
+def test_top_countries_with_top():
+    rows = db.get_top_countries(6)
+    assert len(rows) == 6
 
 # tests de get_collective_medals
 def test_collective_medals_all():
     rows = db.get_collective_medals()
     assert len(rows) > 1
+
+def test_collective_medals_by_id():
+    row = db.get_collective_medals(3)
+    assert len(row) == 1
 
 # tests de get_top_collective
 def test_top_collective():
