@@ -294,7 +294,7 @@ lève une exception, on peut considérer cela comme un bug.
 
     ***
 
-    s
+    Mettre le test non regression et la correction du bug dans le meme commit permet de facilement retrouver le test de non regression ainsi que le bug qu'il resout.
 
     ***
 
