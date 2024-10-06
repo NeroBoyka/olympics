@@ -250,6 +250,12 @@ lève une exception, on peut considérer cela comme un bug.
    question précédente, utilisez la même technique pour améliorer l’efficacité
    de vos tests.
 
+   ***
+
+   pragma: no cover permet a la couverture d'ignorer une ligne ou bloc de code donné
+
+   ***
+
 9. Vous devez avoir une couverture de 100%. Est-ce suffisant pour que
    l’ensemble du code fonctionne parfaitement ? Quels autres types de tests
    pourraient être idéalement réalisés ? (Ne les écrivez pas, décrivez-les
