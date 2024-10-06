@@ -231,10 +231,19 @@ lève une exception, on peut considérer cela comme un bug.
    J'ai corrige un oublie dans get_top_countries
    Puis dans get_collective_medals j'ai ajoute le cas ou il y a d'argument
 
+   ***
+
 6. Recommencez les opérations 4 et 5 avec `api.py`.
 
 7. Recommencez les opérations 4 et 5 avec `cli.py`. À quoi sert le paramètre
    « file » ? Comment cette technique s’appelle-t-elle ?
+
+   ***
+
+   Le parametre file sert a renvoyer la sortie dans un ficher si on le souhaite.
+   Cette technique est appelée redirection de sortie ou abstraction de flux de sortie
+
+   ***
 
 8. Recommencez les opérations 4 et 5 avec `__main__.py`. À quoi sert le
    commentaire « pragma: no cover » ? Grâce à votre expérience acquise avec la
