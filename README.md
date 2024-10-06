@@ -261,9 +261,42 @@ lève une exception, on peut considérer cela comme un bug.
    pourraient être idéalement réalisés ? (Ne les écrivez pas, décrivez-les
    simplement.)
 
+   ***
+
+   Non 100% de couverture signifie uniquement que chaque ligne de code a
+   ete excecutee au moins une fois lors des tests. ca n'empeche pas d'avoir
+   d'autres cas d'erreurs non verifiees.
+
+   ***
+
+   On pourrait faire d'autre tests comme:
+
+   - des tests a blanc pour verifier si le programme a une interface
+     intuitive et facile a utiliser
+   - Des tests de performance ou on verifie que le code fonctionne bien
+     sous des charges elevees de donnees
+   - Des test de securite pour s'assurer que le code est protege contre
+     les attaques comme l'injection SQL
+   - Des test de cas limites, comme les test de pour verifier la reaction
+     du code face aux donnees invalides
+   - les test d'integration pour verifier que les differentes parties du
+     systeme fonctionnent correctement dans l'ensemble
+
+   ***
+
 10. Pourquoi vous a-t-il été demandé d’écrire les tests dans cet ordre-là ? À
     quoi cela sert-il de regrouper une correction de bug et un test de
     non-régression dans un commit commun, ne comprenant que cela ?
+
+    ***
+
+    Il m'a ete demander de faire dans cet ordre car il fallait commencer par les cas de base. Et les fonctions des fichier main, cli et api finissaient par faire recous a celle de db. Commencer par db donc permet de retrouver et fixer les premier bug qui pourraient etre l'origine de plusieurs plus tard
+
+    ***
+
+    s
+
+    ***
 
 ### Ajoutez une fonction en TDD (optionnel)
 
