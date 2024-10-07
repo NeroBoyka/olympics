@@ -24,7 +24,7 @@ def get_countries(id=None):
     If id is not a positive integer, return an empty list.
 
     """
-    if type(id) != int or id < 0:
+    if id is not None and (type(id) != int or id < 0):
         return []
 
     cursor = get_connection().cursor()
@@ -52,7 +52,7 @@ def get_athletes(id=None):
 
     """
     
-    if type(id) != int or id < 0:
+    if id is not None and (type(id) != int or id < 0):
         return []
     
     cursor = get_connection().cursor()
@@ -80,7 +80,7 @@ def get_disciplines(id=None):
 
     """
     
-    if type(id) != int or id < 0:
+    if id is not None and (type(id) != int or id < 0):
         return []
     
     cursor = get_connection().cursor()
@@ -108,7 +108,7 @@ def get_teams(id=None):
 
     """
     
-    if type(id) != int or id < 0:
+    if id is not None and (type(id) != int or id < 0):
         return []
     
     cursor = get_connection().cursor()
@@ -136,7 +136,7 @@ def get_events(id=None):
 
     """
     
-    if type(id) != int or id < 0:
+    if id is not None and (type(id) != int or id < 0):
         return []
     
     cursor = get_connection().cursor()
@@ -164,7 +164,7 @@ def get_medals(id=None):
 
     """
     
-    if type(id) != int or id < 0:
+    if id is not None and (type(id) != int or id < 0):
         return []
     
     cursor = get_connection().cursor()
@@ -191,7 +191,7 @@ def get_discipline_athletes(discipline_id=None):
     If discipline_id is not a positive integer, return an empty list.
     """
 
-    if type(discipline_id) != int or discipline_id < 0:
+    if discipline_id is not None and (type(discipline_id) != int or discipline_id < 0):
         return []
     elif discipline_id is None:
         return []
@@ -218,7 +218,7 @@ def get_top_countries(top=10):
 
     """
 
-    if type(top) != int or top < 0:
+    if top is not None and (type(top) != int or top < 0):
         return []
 
     cursor = get_connection().cursor()
@@ -286,7 +286,7 @@ def get_top_collective(top=10):
 
     """
 
-    if type(top) != int or top < 0:
+    if top is not None and (type(top) != int or top < 0):
         return []
     
     cursor = get_connection().cursor()
@@ -317,7 +317,7 @@ def get_individual_medals(athlete_id=None):
 
     """
 
-    if type(athlete_id) != int or athlete_id < 0:
+    if athlete_id is not None and (type(athlete_id) != int or athlete_id < 0):
         return []
     
     cursor = get_connection().cursor()
@@ -357,7 +357,7 @@ def get_top_individual(top=10):
 
     """
 
-    if type(top) != int or top < 0:
+    if top is not None and (type(top) != int or top < 0):
         return []
     
     cursor = get_connection().cursor()
