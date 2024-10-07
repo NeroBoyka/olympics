@@ -222,14 +222,18 @@ lève une exception, on peut considérer cela comme un bug.
 4. Écrivez des tests pour `db.py`, dans le fichier `test_db.py`. Inspirez-vous
    du test déjà écrit.
 
+   ***
+
+   Je ne sais pas si c'est moi mais meme sans faire de test pour get_top_countries je n'avais pas la notif de la ligne de code non couverte. Ca me mettais bien 99% avec cette partie non testée mais sans pour autant m'indiquer la ligne non test
+
+   ***
+
 5. Un bug est caché dans le fichier, faites un test de non-régression dédié et
    commitez-le avec la correction.
 
    ***
 
-   Pour les trucs a corriger dans db.py j'ai discipline athlete de sorte que ca prenne en compte le cas ou il n'y a pas d'arguments.
-   J'ai corrige un oublie dans get_top_countries
-   Puis dans get_collective_medals j'ai ajoute le cas ou il y a d'argument
+   Pour les trucs a corriger dans db.py j'ai discipline athlete de sorte que ca prenne en compte le cas ou il n'y a pas d'arguments. J'ai corrigé un oublie dans get_top_countries Puis dans get_collective_medals j'ai ajoute le cas ou il y a d'argument
 
    ***
 
@@ -240,8 +244,7 @@ lève une exception, on peut considérer cela comme un bug.
 
    ***
 
-   Le parametre file sert a renvoyer la sortie dans un ficher si on le souhaite.
-   Cette technique est appelée redirection de sortie ou abstraction de flux de sortie
+   Le parametre file sert a renvoyer la sortie dans un ficher si on le souhaite. Cette technique es appelée redirection de sortie ou abstraction de flux de sortie
 
    ***
 
@@ -263,24 +266,18 @@ lève une exception, on peut considérer cela comme un bug.
 
    ***
 
-   Non 100% de couverture signifie uniquement que chaque ligne de code a
-   ete excecutee au moins une fois lors des tests. ca n'empeche pas d'avoir
-   d'autres cas d'erreurs non verifiees.
+   Non 100% de couverture signifie uniquement que chaque ligne de code a ete excecutee au moins une fois lors des tests. ca n'empeche pas d'avoir d'autres cas d'erreurs non verifiees.
 
    ***
 
    On pourrait faire d'autre tests comme:
 
-   - des tests a blanc pour verifier si le programme a une interface
-     intuitive et facile a utiliser
-   - Des tests de performance ou on verifie que le code fonctionne bien
-     sous des charges elevees de donnees
-   - Des test de securite pour s'assurer que le code est protege contre
-     les attaques comme l'injection SQL
-   - Des test de cas limites, comme les test de pour verifier la reaction
-     du code face aux donnees invalides
-   - les test d'integration pour verifier que les differentes parties du
-     systeme fonctionnent correctement dans l'ensemble
+   - des tests par boite noire pour verifier si le programme a une interface intuitive et facile a utiliser
+   - des tests par boite blanche pour verifier plus profondément le fonctionnement du code
+   - Des tests de performance ou on verifie que le code fonctionne bien sous des charges elevees de donnees
+   - Des test de securite pour s'assurer que le code est protege contre les attaques comme l'injection SQL
+   - Des test de cas limites, comme les test de pour verifier la reaction du code face aux donnees invalides
+   - les test d'integration pour verifier que les differentes parties du systeme fonctionnent correctement dans l'ensemble
 
    ***
 
