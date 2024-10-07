@@ -24,7 +24,7 @@ def test_top_collective_without_value():
     cli.top_collective(file=string)
     text = string.getvalue()
     assert 'Top' in text
-    assert 'Collective' in text
+    assert 'collective' in text
     assert '10' in text
 
 def test_top_collective_with_top():
@@ -32,7 +32,7 @@ def test_top_collective_with_top():
     cli.top_collective(top = 6, file=string)
     text = string.getvalue()
     assert 'Top' in text
-    assert 'Collective' in text
+    assert 'collective' in text
     assert '6' in text
 
 def test_top_individual_without_value():
@@ -40,7 +40,7 @@ def test_top_individual_without_value():
     cli.top_individual(file=string)
     text = string.getvalue()
     assert 'Top' in text
-    assert 'Individual' in text
+    assert 'individual' in text
     assert '10' in text
 
 def test_top_individual_with_top():
@@ -48,7 +48,7 @@ def test_top_individual_with_top():
     cli.top_individual(top = 7, file=string)
     text = string.getvalue()
     assert 'Top' in text
-    assert 'Individual' in text
+    assert 'individual' in text
     assert '7' in text
 
 def test_search_countries_without_value():
