@@ -120,3 +120,21 @@ def test_top_individual_id():
     response = client.get('/top-individual/?top=4')
     assert response.status_code == 200
     assert len(response.json()) == 4
+
+def test_search_countries_without_value():
+    response = client.get('/search-countries/')
+    assert response.status_code == 200
+    assert len(response.json()) == 0
+
+def test_search_countries_empty_string():
+    response = client.get('/search-countries/?name=""')
+    assert response.status_code == 200
+    assert len(response.json()) == 0
+
+def test_search_countries_with_value():
+    response = client.get('/search-countries/?name=Canada')
+    assert response.status_code == 200
+    assert response.json() == [{'name': 'Canada'}]
+    
+    response = client.get('/search-countries/?name=lzfnf')
+    assert response.json() == []
