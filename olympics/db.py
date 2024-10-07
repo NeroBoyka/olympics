@@ -386,7 +386,7 @@ def search_countries(search_value = None):
     If there is no argument, return an empty list.
     """
 
-    if search_value is None:
+    if search_value is None or type(search_value) != str:
         return []
     
     formatted_name = '%' + search_value + '%'
