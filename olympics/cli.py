@@ -62,3 +62,16 @@ def top_individual(top=10, file=None):
 
     console = Console(file=file)
     console.print(table)
+
+def search_countries(name=None, file=None):
+    table = Table(title=f'List of countries with characters: {name}', min_width=50)
+
+    table.add_column('Country')
+
+    for row in db.search_countries(name):
+        table.add_row(
+            row['name'],
+        )
+
+    console = Console(file=file)
+    console.print(table)
