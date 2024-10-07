@@ -107,3 +107,33 @@ def test_top_individual():
 def test_top_individual_with_top():
     rows = db.get_top_individual(4)
     assert len(rows) == 4
+
+# test de search_countries
+def test_search_countries_without_value():
+    rows = db.search_countries()
+    assert rows == []
+
+def test_search_countries_empty_string():
+    rows = db.search_countries('')
+    assert len(rows) > 0
+
+def test_search_countries_with_value():
+    rows = db.search_countries('uni')
+    assert len(rows) > 0
+
+    country_names = []
+    for x in rows: country_names.append(x['name'])
+    assert 'United States' in country_names
+    assert 'Unified Team' in country_names
+    assert 'Soviet Union' in country_names
+
+    rows = db.search_countries('france')
+    assert len(rows) == 1
+    assert rows[0]['name'] == 'France'
+
+    rows = db.search_countries('zzfaf')
+    assert rows == []
+
+def test_search_countries_sql_injection():
+    rows = db.search_countries('Uganda veut DROP TABLE COUNTRY;')
+    assert rows == []
