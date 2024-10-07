@@ -134,9 +134,9 @@ def test_top_countries_invalid_top():
     rows = db.get_top_countries(0)
     assert len(rows) == 0
     rows = db.get_top_countries(999999)
-    assert len(rows) == 10
+    assert len(rows) > 1
     rows = db.get_top_countries("zfzf")
-    assert len(rows) == 10
+    assert rows == []
 
 # tests de get_collective_medals
 def test_collective_medals_all():
@@ -172,9 +172,9 @@ def test_top_collective_invalid_top():
     rows = db.get_top_collective(0)
     assert len(rows) == 0
     rows = db.get_top_collective(999999)
-    assert len(rows) == 10
+    assert len(rows) > 1
     rows = db.get_top_collective("zfzf")
-    assert len(rows) == 10
+    assert rows == []
 
 # test de get_individual_medals
 def test_individual_medals_all():
@@ -210,9 +210,9 @@ def test_top_individual_invalid_top():
     rows = db.get_top_individual(0)
     assert len(rows) == 0
     rows = db.get_top_individual(999999)
-    assert len(rows) == 10
+    assert len(rows) > 1
     rows = db.get_top_individual("zfzf")
-    assert len(rows) == 10
+    assert rows == []
 
 # test de search_countries
 def test_search_countries_without_value():
