@@ -312,3 +312,23 @@ def get_top_individual(top=10):
     ''', (top,)).fetchall()
     cursor.close()
     return rows
+
+def search_countries(search_value = None):
+    """
+    Get list of countries with given search value.
+
+    If there is no argument, return an empty list.
+    """
+
+    if search_value is None:
+        return []
+    
+    formated_name = '%' + search_value + '%'
+    cursor = get_connection().cursor()
+    rows = cursor.execute('''
+        SELECT name
+        FROM country
+        WHERE name LIKE ?
+    ''', (formated_name,)).fetchall()
+    cursor.close()
+    return rows
