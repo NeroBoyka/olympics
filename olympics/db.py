@@ -16,13 +16,17 @@ def get_connection():
     cursor.close()
     return connection
 
-
 def get_countries(id=None):
     """Get list of countries.
 
     If id is not None, the list contains only the country with given id.
 
+    If id is not a positive integer, return an empty list.
+
     """
+    if type(id) != int or id < 0:
+        return []
+
     cursor = get_connection().cursor()
     if id is None:
         rows = cursor.execute('''
@@ -44,7 +48,13 @@ def get_athletes(id=None):
 
     If id is not None, the list contains only the athlete with given id.
 
+    If id is not a positive integer, return an empty list.
+
     """
+    
+    if type(id) != int or id < 0:
+        return []
+    
     cursor = get_connection().cursor()
     if id is None:
         rows = cursor.execute('''
@@ -66,7 +76,13 @@ def get_disciplines(id=None):
 
     If id is not None, the list contains only the discipline with given id.
 
+    If id is not a positive integer, return an empty list.
+
     """
+    
+    if type(id) != int or id < 0:
+        return []
+    
     cursor = get_connection().cursor()
     if id is None:
         rows = cursor.execute('''
@@ -88,7 +104,13 @@ def get_teams(id=None):
 
     If id is not None, the list contains only the team with given id.
 
+    If id is not a positive integer, return an empty list.
+
     """
+    
+    if type(id) != int or id < 0:
+        return []
+    
     cursor = get_connection().cursor()
     if id is None:
         rows = cursor.execute('''
@@ -110,7 +132,13 @@ def get_events(id=None):
 
     If id is not None, the list contains only the event with given id.
 
+    If id is not a positive integer, return an empty list.
+
     """
+    
+    if type(id) != int or id < 0:
+        return []
+    
     cursor = get_connection().cursor()
     if id is None:
         rows = cursor.execute('''
@@ -132,7 +160,13 @@ def get_medals(id=None):
 
     If id is not None, the list contains only the medal with given id.
 
+    If id is not a positive integer, return an empty list.
+
     """
+    
+    if type(id) != int or id < 0:
+        return []
+    
     cursor = get_connection().cursor()
     if id is None:
         rows = cursor.execute('''
@@ -150,8 +184,16 @@ def get_medals(id=None):
 
 
 def get_discipline_athletes(discipline_id=None):
-    """Get athlete ids linked to given discipline id."""
-    if discipline_id is None:
+    """Get athlete ids linked to given discipline id.
+
+    If discipline_id is not None, the list contains only the athlete ids linked to the discipline with given id.
+
+    If discipline_id is not a positive integer, return an empty list.
+    """
+
+    if type(discipline_id) != int or discipline_id < 0:
+        return []
+    elif discipline_id is None:
         return []
     else:
         cursor = get_connection().cursor()
@@ -172,7 +214,13 @@ def get_top_countries(top=10):
 
     Number of countries is limited to the given top number.
 
+    if top is not a positive integer, return an empty list.
+
     """
+
+    if type(top) != int or top < 0:
+        return []
+
     cursor = get_connection().cursor()
     rows = cursor.execute('''
         SELECT
@@ -234,7 +282,13 @@ def get_top_collective(top=10):
 
     Number of countries is limited to the given top number.
 
+    if top is not a positive integer, return an empty list.
+
     """
+
+    if type(top) != int or top < 0:
+        return []
+    
     cursor = get_connection().cursor()
     rows = cursor.execute('''
         SELECT
@@ -259,7 +313,13 @@ def get_individual_medals(athlete_id=None):
     If athlete_id is not None, the list contains only the medals won by athlete
     with given id.
 
+    If athlete_id is not a positive integer, return an empty list.
+
     """
+
+    if type(athlete_id) != int or athlete_id < 0:
+        return []
+    
     cursor = get_connection().cursor()
     sql = '''
         SELECT
@@ -293,7 +353,13 @@ def get_top_individual(top=10):
 
     Number of athletes is limited to the given top number.
 
+    If top is not a positive integer, return an empty list.
+
     """
+
+    if type(top) != int or top < 0:
+        return []
+    
     cursor = get_connection().cursor()
     rows = cursor.execute('''
         SELECT
@@ -323,12 +389,12 @@ def search_countries(search_value = None):
     if search_value is None:
         return []
     
-    formated_name = '%' + search_value + '%'
+    formatted_name = '%' + search_value + '%'
     cursor = get_connection().cursor()
     rows = cursor.execute('''
         SELECT name
         FROM country
         WHERE name LIKE ?
-    ''', (formated_name,)).fetchall()
+    ''', (formatted_name,)).fetchall()
     cursor.close()
     return rows
