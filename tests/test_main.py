@@ -14,7 +14,11 @@ def test_individual():
     argv = ['individual']
     main(argv)
 
-def test_negative_top_2():
+def test_negative_top():
     with pytest.raises(argparse.ArgumentTypeError):
         argv = ['individual', '--top', '-5']
         main(argv)
+
+def test_search():
+    argv = ['search', '--name', 'France']
+    main(argv)

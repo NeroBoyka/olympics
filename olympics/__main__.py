@@ -11,13 +11,19 @@ parser = argparse.ArgumentParser(
 parser.add_argument(
     'command',
     help='command to launch',
-    choices=('countries', 'collective', 'individual'),
+    choices=('countries', 'collective', 'individual', 'search'),
 )
 parser.add_argument(
     '--top',
     help='number of top elements to display',
     type=int,
     default=10,
+)
+parser.add_argument(
+    '--name',
+    help='name to search',
+    type=str,
+    default=None,
 )
 
 def main(argv=None):
@@ -31,7 +37,9 @@ def main(argv=None):
             cli.top_collective(top)
         case 'individual':
             cli.top_individual(top)
-
+        case 'search':
+            name = str(args.name)
+            cli.search_countries(name)
 
 if __name__ == '__main__':  # pragma: no cover
     main()
