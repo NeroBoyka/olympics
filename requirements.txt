@@ -18,7 +18,7 @@ Jinja2==3.1.4
 markdown-it-py==3.0.0
 MarkupSafe==2.1.5
 mdurl==0.1.2
--e git+https://github.com/NeroBoyka/olympics.git@e81ea774902622971ad976900aaadafc610f9999#egg=olympics
+-e git+https://github.com/NeroBoyka/olympics.git@b1869b912f7f3c6f94377b3bd1ed771c86b32f04#egg=olympics
 packaging==24.1
 pluggy==1.5.0
 pydantic==2.9.2
@@ -30,6 +30,7 @@ python-dotenv==1.0.1
 python-multipart==0.0.12
 PyYAML==6.0.2
 rich==13.9.2
+ruff==0.6.9
 shellingham==1.5.4
 sniffio==1.3.1
 starlette==0.38.6
