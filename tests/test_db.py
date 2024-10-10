@@ -228,7 +228,8 @@ def test_search_countries_with_value():
     assert len(rows) > 0
 
     country_names = []
-    for x in rows: country_names.append(x['name'])
+    for x in rows:
+        country_names.append(x['name'])
     assert 'United States' in country_names
     assert 'Unified Team' in country_names
     assert 'Soviet Union' in country_names
