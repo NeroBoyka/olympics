@@ -325,3 +325,17 @@ méthodes pour s’assurer que le code suit toujours ces bonnes pratiques.
 
 Si vous avez des réponses à écrire, des remarques à faire sur votre travail,
 ajoutez-les à la fin de ce fichier.
+
+Je n'ai pas pu implementer le workflows comme il faut, j'ai toujours cette parti ci dessous marlgré les differentes methodes que j'ai utilisé
+
+"""partie d'erreur
+
+****\*\*****\_\_****\*\***** ERROR collecting tests/test_api.py ****\*\*****\_\_****\*\*****
+import file mismatch:
+imported module 'test_api' has this **file** attribute:
+/home/runner/work/olympics/olympics/src/olympics/tests/test_api.py
+which is not the same as the test file we want to collect:
+/home/runner/work/olympics/olympics/tests/test_api.py
+HINT: remove **pycache** / .pyc files and/or use a unique basename for your test file modules
+
+"""
